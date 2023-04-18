@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import {   useStoryblokState, getStoryblokApi, StoryblokComponent } from "@storyblok/react"
-
+import Layout from '../components/Layout'
 import styles from '../styles/Home.module.css'
 
 export default function Home({story}) {
@@ -22,7 +22,9 @@ export default function Home({story}) {
       </header>
  
       <main>
-        <StoryblokComponent blok={story.content} />
+        <Layout>
+          <StoryblokComponent blok={story.content} />
+        </Layout>
       </main>
     </div>
   )
